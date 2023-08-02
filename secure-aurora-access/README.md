@@ -11,5 +11,5 @@ $ terraform apply
 $ aws ssm start-session \
     --target <踏み台のインスタンスID> \
     --document-name AWS-StartPortForwardingSessionToRemoteHost \
-    --parameters '{"host":["<>"],"portNumber":["5432"], "localPortNumber":["5432"]}
+    --parameters '{"host":["<Auroraのエンドポイント>"],"portNumber":["5432"], "localPortNumber":["5432"]}
 ```
