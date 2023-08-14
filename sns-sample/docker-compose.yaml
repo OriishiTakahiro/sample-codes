@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  publisher:
+    build:
+      context: ./publisher
+      dockerfile: Dockerfile
+    environment:
+      AWS_ACCESS_KEY_ID: "localstack"
+      AWS_SECRET_ACCESS_KEY: "localstack"
+      AWS_DEFAULT_REGION: "ap-northeast-1"
+  subscriber:
+    build:
+      context: ./subscriber
+      dockerfile: Dockerfile
+    environment:
+      AWS_ACCESS_KEY_ID: "localstack"
+      AWS_SECRET_ACCESS_KEY: "localstack"
+      AWS_DEFAULT_REGION: "ap-northeast-1"
+  localstack:
+    image: localstack/localstack:2.2.0
+    ports:
+      - "4566:4566"
+    environment:
+      DEBUG: 1
+      SERVICES: "SNS,SQS"
+      AWS_ACCESS_KEY_ID: "localstack"
+      AWS_SECRET_ACCESS_KEY: "localstack"
+      AWS_DEFAULT_REGION: "ap-northeast-1"
