@@ -39,7 +39,7 @@ resource "aws_rds_cluster_instance" "aurora_cluster_instance" {
 }
 
 # ---------------------
-# Aurora Cluster
+# Security Group
 # ---------------------
 
 resource "aws_security_group" "aurora_cluster" {
