@@ -42,6 +42,6 @@ func main() {
 		} else {
 			fmt.Println("Published: ", messageID)
 		}
-		time.Sleep(time.Millisecond * 200)
+		time.Sleep(time.Millisecond * 100)
 	}
 }
