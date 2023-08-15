@@ -68,6 +68,13 @@ $ docker compose exec localstack \
     --topic-arn arn:aws:sns:ap-northeast-1:000000000000:sns-sample \
     --protocol sqs --notification-endpoint arn:aws:sqs:ap-northeast-1:000000000000:sample-queue
 
+# 通知確認
+$ docker compose logs -f publisher
+
+# SNS -> SQS確認
+$ docker compose logs -f localstack
+
 # 購読確認
-$ docker compose logs -f subscriber
+$ docker compose logs -f subscriber-1
+$ docker compose logs -f subscriber-2
 ```
