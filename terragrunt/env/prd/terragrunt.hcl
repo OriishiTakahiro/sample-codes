@@ -44,6 +44,6 @@ terraform {
   # planとapplyの直前にPRD環境であることをチェックする
   before_hook "before_hook" {
     commands     = ["apply", "plan"]
-    execute      = ["${get_parent_terragrunt_dir()}/confirm_env.sh"]
+    execute      = ["${get_parent_tterragrunt_dir()}/confirm_env.sh"]
   }
 }
